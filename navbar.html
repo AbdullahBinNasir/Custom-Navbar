@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- BootStrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .lowertext{
+            padding-top: 13px;
+            font-size: 18px;
+        }
+        #homeicon:hover #hometxt{
+            /* transition: 10s ease; */
+            transition-property: all;
+            transition-duration: 5s;
+            transition-delay: 2s;
+
+            animation-name: initial;
+            animation-duration: 2s;
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home" style="font-size: 23px;" aria-current="page" href="#"><i
+                                class="fa-solid fa-house" onmouseover="hometxtpop()" onmouseout="hometxtunpop()" id="homeicon" ></i></a>
+                    </li>
+                    <small class="lowertext" id="hometxt"></small>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="shorts" style="font-size: 23px;" href="#"><i
+                                class="fa-solid fa-bolt" onmouseover="shortstxtpop()" onmouseout="shortstxtunpop()" id="shortsicon" ></i></a>
+                    </li>
+                    <small class="lowertext" id="shortstxt"></small>
+                    <li class="nav-item">
+                        <a class="nav-link active " id="clock" style="font-size: 23px;" aria-disabled="true"><i
+                                class="fa-solid fa-clock-rotate-left" onmouseover="historytxtpop()" onmouseout="historytxtunpop()" id="clockicon"></i></a>
+                    </li>
+                    <small class="lowertext" id="clocktxt"></small>
+                    <li class="nav-item">
+                        <a class="nav-link active " id="trend" style="font-size: 23px;" aria-disabled="true"><i
+                                class="fa-solid fa-fire" onmouseover="trendtxtpop()" onmouseout="trendtxtunpop()" id="trendicon"></i></a>
+                    </li>
+                    <small class="lowertext" id="trendtxt"></small>
+                    <li class="nav-item">
+                        <a class="nav-link active " id="music" style="font-size: 23px;" aria-disabled="true"><i
+                            class="fa-solid fa-music" onmouseover="musictxtpop()" onmouseout="musictxtunpop()" id="musicicon" ></i></a>
+                    </li>
+                    <small class="lowertext" id="musictxt"></small>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" id="dropdown" href="#" role="button"
+                            style="font-size: 23px;" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-square-caret-down" onmouseover="droptxtpop()" onmouseout="droptxtunpop()" id="dropixon" ></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <small class="lowertext" id="droptxt"></small>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- BootStrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        
+        var home = document.getElementById("hometxt")
+        var shorts = document.getElementById("shortstxt")
+        var clock = document.getElementById("clocktxt")
+        var trend = document.getElementById("trendtxt")
+        var music = document.getElementById("musictxt")
+        var dropdown = document.getElementById("droptxt")
+
+        // Home Text
+        function hometxtpop() {
+            home.innerText = "Home"
+        }
+
+        function hometxtunpop() {
+            home.innerText = ""
+        }
+
+        // Shorts Text
+        function shortstxtpop(){
+            shorts.innerText = "Shorts"
+        }
+        
+        function shortstxtunpop (){
+            shorts.innerText = ""
+        }
+
+        // History Text 
+        function historytxtpop() {
+            clock.innerText = "History"
+        }
+        function historytxtunpop(){
+            clock.innerText = ""
+        }
+
+        // Trending Text
+        function trendtxtpop(){
+            trend.innerText = "Trending"
+        }
+        function trendtxtunpop(){
+            trend.innerText = ""
+        }
+
+        // Music Text
+        function musictxtpop(){
+            music.innerText = "Music"
+        }
+        function musictxtunpop(){
+            music.innerText = ""
+        }
+
+        // DropDown Text
+        function droptxtpop(){
+            dropdown.innerText = "Drop-Down"
+        }
+        function droptxtunpop(){
+            dropdown.innerText = "  "
+        }
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>
